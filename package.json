@@ -2,11 +2,13 @@
   "name": "one_bit_messenger",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^4.2.0",
     "bulma": "^0.8.0",
+    "bulma-quickview": "^2.0.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

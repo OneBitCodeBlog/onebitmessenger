@@ -1,1 +1,21 @@
-@import "bulma/bulma"
+@import "bulma/bulma";
+@import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
+@import "@fortawesome/fontawesome-free/css/solid.min.css";
+@import "bulma-quickview/dist/css/bulma-quickview";
+
+.navbar-burger.burger.desktop-burger {
+  display: block
+}
+
+.sidebar-menu {
+  li {
+    padding: 0.7em;
+
+    a {
+      &:link, &:hover, &:visited, &:active {
+        text-decoration: none;
+        color: $white-ter;
+      }
+    }
+  }
+}

@@ -4,12 +4,41 @@
     <title>OneBitMessenger</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-widthm initial-scale=1">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar has-background-grey-dark has-text-white-ter">
+      <div class="container">
+        <div class="navbar-brand">
+          <div class="navbar-item has-text-white-ter">
+            <%= image_tag "logo-menu.png" %>
+          </div>
+
+          <div class="navbar-burger burger has-text-white-ter" data-show="quickview" data-target="left-sidebar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="navbar-burger burger has-text-white-ter desktop-burger is-hidden-touch" data-show="quickview" data-target="left-sidebar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+        
+      <%= render "layouts/sidebar" %>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
