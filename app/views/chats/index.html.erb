@@ -1,0 +1,26 @@
+<%= content_for :title do %>
+  Chats
+<% end %>
+
+<div class="columns is-multiline is-paddingless">
+  <% if @users.length <= 0 %>
+    <div class="notification is-warning">You don't have any chats started yet. Add a contact and try it!</div>
+  <% else %>
+    <% @users.each do |user| %>
+      <div class="column is-12">
+        <div class="columns is-mobile is-vcentered item-list">
+          <div class="column is-marginless is-one-fifth has-text-centered">
+            <% if user.photo.present? %>
+              <figure class="image"><%= image_tag user.photo, class: "is-rounded"%></figure>
+            <% else %>
+              <i class="fas fa-paw has-text-write-ter"></i>
+            <% end %>
+          </div>
+          <div class="column is-four-fifths">
+            <%= link_to user.name, chat_path(user) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
