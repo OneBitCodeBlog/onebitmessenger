@@ -9,6 +9,10 @@ class MessageSenderJob < ApplicationJob
 
   def render_partial(message)
     MessagesController.renderer.render partial: "messages/message", 
+<<<<<<< HEAD
                                         locals: { message: message, current_user: message.receiver }
+=======
+                                      locals: { message: message, current_user: message.receiver }
+>>>>>>> Recepção das mensagens
   end
 end
