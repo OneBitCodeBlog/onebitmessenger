@@ -1,0 +1,45 @@
+<%= content_for :brand do %>
+  <% if @user.photo.present? %>
+    <%= image_tag @user.photo %>
+  <% else %>
+    <i class="fas fa-paw has-text-white-ter"></i>
+  <% end %>
+<% end %>
+
+<%= content_for :title do %>
+  <div class="contact-header">
+    <div class="name">
+      <%= @user.name %>
+    </div>
+    <div class="status">
+      Online
+    </div>
+  </div>
+<% end %>
+
+<div class="message-container">
+  <div class="columns">
+    <div class="column">
+      Messages
+    </div>
+  </div>
+
+  <footer class="send-message has-background-black">
+    <div class="container">
+      <%= form_with url: "" do |f| %>
+        <div class="columns is-mobile is-vcentered">
+          <div class="column is-four-fifths">
+            <div class="fields">
+              <%= f.text_area "message[content]", class: "textarea", rows: 1, style: "resize: none" %>
+            </div>
+          </div>
+          <div class="column is-one-fifth has-text-centered">
+            <%= button_tag class: "button is-info is-rounded has-text-white-ter" do %>
+              <i class="fas fa-paper-plane"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </footer>
+</div>

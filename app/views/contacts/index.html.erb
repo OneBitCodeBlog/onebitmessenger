@@ -14,7 +14,7 @@
           <% end %>
         </div>
         <div class="column is-three-fifths">
-          <%= contact.record.name %>
+          <%= link_to contact.record.name, chat_path(contact.record) %>
         </div>
         <div class="column is-one-fifth has-text-centered">
           <%= link_to contact, method: :delete do %>

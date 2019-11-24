@@ -1,0 +1,33 @@
+.message-container {
+  position: absolute;
+  top: -47px;
+  width: 100%;
+  padding-bottom: 75px;
+}
+
+footer.send-message {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 10px;
+
+  textarea {
+    height: 80px;
+    font-size: 12pt;
+  }
+}
+
+div.contact-header {
+  div.name {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  div.status {
+    width: 100%;
+    font-size: 10px;
+    font-weight: normal;
+  }
+}
