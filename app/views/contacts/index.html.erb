@@ -1,0 +1,27 @@
+<%= content_for :title do %>
+  Contacts
+<% end %>
+
+<div class="columns is-multiline is-paddingless">
+  <% @contacts.each do |contact| %>
+    <div class="column is-12">
+      <div class="columns is-mobile is-vcentered item-list">
+        <div class="column is-marginless is-one-fifth has-text-centered">
+          <% if contact.record.photo.present? %>
+            <figure class="image"><%= image_tag contact.record.photo, class: "is-rounded"%></figure>
+          <% else %>
+            <i class="fas fa-paw has-text-write-ter"></i>
+          <% end %>
+        </div>
+        <div class="column is-three-fifths">
+          <%= contact.record.name %>
+        </div>
+        <div class="column is-one-fifth has-text-centered">
+          <%= link_to "" do %>
+            <i style="font-size: 1em;" class="fas fa-trash-alt has-text-write-ter"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
