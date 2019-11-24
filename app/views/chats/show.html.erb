@@ -7,12 +7,12 @@
 <% end %>
 
 <%= content_for :title do %>
-  <div class="contact-header">
+  <div class="contact-header" data-user="<%= @user.id %>">
     <div class="name">
       <%= @user.name %>
     </div>
     <div class="status">
-      Online
+      <%= @user.is_online? ? "Online" : "Offline" %>
     </div>
   </div>
 <% end %>
