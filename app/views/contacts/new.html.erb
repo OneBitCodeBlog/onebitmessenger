@@ -1,0 +1,21 @@
+<%= content_for :title do %>
+  New Contact
+<% end %>
+
+<div class="columns is-multiline is-paddingless">
+  <div class="column is-12">
+    <%= form_with model: @contact, local: true do |f| %>
+      <%= f.fields_for :record do |uf| %>
+        <div class="field">
+          <%= uf.label :email, class: "label has-text-white-ter" %>
+          <div class="control">
+            <%= uf.email_field :email, class: "input #{ 'is-danger' if f.object.errors[:record].present? }"%>
+          </div>
+          <p class="help is-danger"><%= f.object.errors[:record].first %></p>
+        </div>
+      <% end %>
+
+      <%= f.submit "Add Contact", class: "button is-fullwidth is-success is-outlined" %>
+    <% end %>
+  </div>
+</div>
