@@ -1,0 +1,23 @@
+<div class="columns is-mobile is-vcentered is-multiline message <%= message.sender == current_user ? 'sender' : 'receiver' %>">  
+  <div class="column is-one-fifth-mobile is-1-tablet photo">
+    <% if message.sender.photo.present? %>
+      <figure class="image is-square is-36x36">
+        <%= image_tag rails_blob_path(message.sender.photo), class: 'is-rounded' %>
+      </figure>
+    <% else %>
+      <i class="fas fa-paw has-text-write-ter fa-2x"></i>
+    <% end %>
+  </div>
+
+  <div class="column is-11-table is-four-fifth-mobile details">
+    <div class="columns is-multiline">
+      <div class="column is-full content">
+        <%= message.content %>
+      </div>
+
+      <div class="column is-full date">
+        <%= message.created_at.strftime("%m/%d/%Y %H:%M") %>
+      </div>
+    </div>
+  </div>
+</div>
