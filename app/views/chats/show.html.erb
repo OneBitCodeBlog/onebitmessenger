@@ -18,15 +18,11 @@
 <% end %>
 
 <div class="message-container">
-  <div class="columns">
-    <div class="column">
-      Messages
-    </div>
-  </div>
-
+  <%= render @messages %>
+  
   <footer class="send-message has-background-black">
     <div class="container">
-      <%= form_with url: "" do |f| %>
+      <%= form_with url: chat_messages_path(@user) do |f| %>
         <div class="columns is-mobile is-vcentered">
           <div class="column is-four-fifths">
             <div class="fields">

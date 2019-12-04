@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :contacts, only: %i(index new create destroy)
-  resources :chats, only: %i(index show)
+  resources :chats, only: %i(index show) do
+    resources :messages, only: :create, defaults: { format: :js }
+  end
 end
